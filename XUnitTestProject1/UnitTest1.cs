@@ -1,16 +1,15 @@
-﻿using ClassLibrary1;
-using Moq;
-using System;
+﻿using Moq;
+using SalaryCalculater;
 using Xunit;
 
 namespace XUnitTestProject1
 {
     public class UnitTest1
     {
-        IInflationRate _inflation;
-        readonly Mock<IInflationRate> _mockObjem;
-        readonly SalaryService _salaryService;
-         
+        private IInflationRate _inflation;
+        private readonly Mock<IInflationRate> _mockObjem;
+        private readonly SalaryService _salaryService;
+
         public UnitTest1()
         {
             _mockObjem = new Mock<IInflationRate>(MockBehavior.Loose);
@@ -19,6 +18,7 @@ namespace XUnitTestProject1
             _salaryService = new SalaryService(_mockObjem.Object);
             // sana sahte bir nesne verdim demiş oldum.
         }
+
         [Fact]
         public void Test1()
         {
@@ -29,8 +29,6 @@ namespace XUnitTestProject1
             var actualRate = _salaryService.CalculateSalaryByInflationRateAndYear(2021, 3000);
 
             Assert.Equal<double>(expectedSalary, actualRate);
-
         }
-
     }
 }

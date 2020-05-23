@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ClassLibrary1
+﻿namespace SalaryCalculater
 {
-  public  interface IInflationRate
+    public interface IInflationRate
     {
         double GetInflationRateByYear(int year);
     }
