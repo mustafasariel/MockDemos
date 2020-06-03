@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SalaryCalculater;
+using SalaryCalculateServices;
 using System;
 
 namespace MockDemos
@@ -7,7 +7,6 @@ namespace MockDemos
     internal class Program
     {
         private static IInflationRate _inflation;
-
         private static void Main(string[] args)
         {
             ServiceProvider serviceProvider = startup();
@@ -28,4 +27,5 @@ namespace MockDemos
                                            .BuildServiceProvider();
         }
     }
+  
 }
